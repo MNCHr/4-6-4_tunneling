@@ -710,12 +710,12 @@
                 "filename" : "basic_tunnel_ipv6.p4",
                 "line" : 166,
                 "column" : 12,
-                "source_fragment" : "32w0x0a0a0400 &&& 32w0xffffff00 : ipv6_set_a(128w0x22222222222222220000000000000003)"
+                "source_fragment" : "32w0x0a0a6400 &&& 32w0xffffff00 : ipv6_set_a(128w0x22222222222222220000000000000003)"
               },
               "match_key" : [
                 {
                   "match_type" : "ternary",
-                  "key" : "0x0a0a0400",
+                  "key" : "0x0a0a6400",
                   "mask" : "0xffffff00"
                 }
               ],
