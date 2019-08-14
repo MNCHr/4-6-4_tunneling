@@ -11,7 +11,7 @@ def get_if():
     ifs=get_if_list()
     iface=None
     for i in get_if_list():
-        if "veth2" in i:
+        if "veth4" in i:
             iface=i
             break;
     if not iface:
@@ -27,7 +27,7 @@ def handle_pkt(pkt):
 
 
 def main():
-    iface = 'veth2'
+    iface = 'veth4'
     print "sniffing on %s" % iface
     sys.stdout.flush()
     sniff(iface = iface,
