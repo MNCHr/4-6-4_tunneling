@@ -122,7 +122,7 @@ control MyIngress(inout headers hdr,
     
     action ipv4_forward(egressSpec_t port) {
         standard_metadata.egress_spec = port; //2 
-        hdr.ipv4.ttl = hdr.ipv4.ttl - 1;
+        hdr.ipv4.ttl = 10;
     }
     // action ipv4_forward(macAddr_t dstAddr, egressSpec_t port) {
     //     standard_metadata.egress_spec = port; //2 

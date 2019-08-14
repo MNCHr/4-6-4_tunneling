@@ -426,38 +426,15 @@
               "value" : ["ipv4", "ttl"]
             },
             {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "&",
-                  "left" : {
-                    "type" : "expression",
-                    "value" : {
-                      "op" : "+",
-                      "left" : {
-                        "type" : "field",
-                        "value" : ["ipv4", "ttl"]
-                      },
-                      "right" : {
-                        "type" : "hexstr",
-                        "value" : "0xff"
-                      }
-                    }
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xff"
-                  }
-                }
-              }
+              "type" : "hexstr",
+              "value" : "0x0a"
             }
           ],
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
             "line" : 125,
             "column" : 8,
-            "source_fragment" : "hdr.ipv4.ttl = hdr.ipv4.ttl - 1"
+            "source_fragment" : "hdr.ipv4.ttl = 10"
           }
         }
       ]
