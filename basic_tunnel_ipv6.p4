@@ -150,7 +150,8 @@ control MyIngress(inout headers hdr,
         
     }
     
-    action ipv6_set_a(bit<128> value_ipv6_dstAddr) {
+    action ipv6_set_a(bit<128> value_ipv6_srcAddr, bit<128> value_ipv6_dstAddr) {
+        hdr.ipv6.srcAddr = value_ipv6_srcAddr;
         hdr.ipv6.dstAddr = value_ipv6_dstAddr;
     }
 
@@ -162,8 +163,8 @@ control MyIngress(inout headers hdr,
             ipv6_set_a;
         }
         const entries = {
-            32w0x0a0a0100 &&& 32w0xffffff00 : ipv6_set_a(128w0x22222222222222220000000000000004); //2222:2222:2222:2222::4
-            32w0x0a0a6400 &&& 32w0xffffff00 : ipv6_set_a(128w0x22222222222222220000000000000003); //2222:2222:2222:2222::3
+            32w0x0a0a0100 &&& 32w0xffffff00 : ipv6_set_a(128w0x22222222222222220000000000000003, 128w0x22222222222222220000000000000004); //2222:2222:2222:2222::4
+            32w0x0a0a6400 &&& 32w0xffffff00 : ipv6_set_a(128w0x22222222222222220000000000000004, 128w0x22222222222222220000000000000003); //2222:2222:2222:2222::3
         }
     }
 
