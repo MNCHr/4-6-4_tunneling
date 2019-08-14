@@ -122,7 +122,7 @@ control MyIngress(inout headers hdr,
     
     action ipv4_forward(egressSpec_t port) {
         standard_metadata.egress_spec = port; //2 
-        hdr.ipv4.ttl = 10;
+        hdr.ipv4.ttl = 4;
     }
     // action ipv4_forward(macAddr_t dstAddr, egressSpec_t port) {
     //     standard_metadata.egress_spec = port; //2 
@@ -170,6 +170,7 @@ control MyIngress(inout headers hdr,
 
     action ipv6_forward(egressSpec_t port) {
         standard_metadata.egress_spec = port; //=1
+        hdr.ipv6.hopLimit = 6;
     }
 
     table ipv6_lpm {

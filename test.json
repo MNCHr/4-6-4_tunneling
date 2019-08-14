@@ -256,7 +256,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "basic_tunnel_ipv6.p4",
-        "line" : 250,
+        "line" : 251,
         "column" : 8,
         "source_fragment" : "MyDeparser"
       },
@@ -272,7 +272,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "basic_tunnel_ipv6.p4",
-        "line" : 228,
+        "line" : 229,
         "column" : 1,
         "source_fragment" : "update_checksum( ..."
       },
@@ -427,14 +427,14 @@
             },
             {
               "type" : "hexstr",
-              "value" : "0x0a"
+              "value" : "0x04"
             }
           ],
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
             "line" : 125,
             "column" : 8,
-            "source_fragment" : "hdr.ipv4.ttl = 10"
+            "source_fragment" : "hdr.ipv4.ttl = 4"
           }
         }
       ]
@@ -521,6 +521,25 @@
             "column" : 8,
             "source_fragment" : "standard_metadata.egress_spec = port"
           }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv6", "hopLimit"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x06"
+            }
+          ],
+          "source_info" : {
+            "filename" : "basic_tunnel_ipv6.p4",
+            "line" : 173,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv6.hopLimit = 6"
+          }
         }
       ]
     },
@@ -543,7 +562,7 @@
           ],
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 198,
+            "line" : 199,
             "column" : 12,
             "source_fragment" : "hdr.ethernet.etherType = 16w0x86dd"
           }
@@ -558,7 +577,7 @@
           ],
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 199,
+            "line" : 200,
             "column" : 12,
             "source_fragment" : "hdr.ipv6.setValid()"
           }
@@ -580,7 +599,7 @@
           ],
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 205,
+            "line" : 206,
             "column" : 12,
             "source_fragment" : "hdr.ipv6.setInvalid()"
           }
@@ -599,7 +618,7 @@
           ],
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 206,
+            "line" : 207,
             "column" : 12,
             "source_fragment" : "hdr.ethernet.etherType = 16w0x800"
           }
@@ -624,7 +643,7 @@
           "id" : 0,
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 198,
+            "line" : 199,
             "column" : 35,
             "source_fragment" : "= 16w0x86dd; ..."
           },
@@ -732,7 +751,7 @@
           "id" : 2,
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 175,
+            "line" : 176,
             "column" : 10,
             "source_fragment" : "ipv6_lpm"
           },
@@ -768,7 +787,7 @@
             {
               "source_info" : {
                 "filename" : "basic_tunnel_ipv6.p4",
-                "line" : 187,
+                "line" : 188,
                 "column" : 12,
                 "source_fragment" : "128w0x22222222222222220000000000000000 &&& 128w0xFFFFFFFFFFFFFFFF0000000000000000 : ipv6_forward(1)"
               },
@@ -792,7 +811,7 @@
           "id" : 3,
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 205,
+            "line" : 206,
             "column" : 12,
             "source_fragment" : "hdr.ipv6.setInvalid(); ..."
           },
@@ -884,7 +903,7 @@
           "id" : 0,
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 197,
+            "line" : 198,
             "column" : 12,
             "source_fragment" : "hdr.ipv4.isValid() && !hdr.ipv6.isValid()"
           },
@@ -931,7 +950,7 @@
           "id" : 1,
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 204,
+            "line" : 205,
             "column" : 16,
             "source_fragment" : "hdr.ipv6.isValid()"
           },
@@ -956,7 +975,7 @@
       "id" : 1,
       "source_info" : {
         "filename" : "basic_tunnel_ipv6.p4",
-        "line" : 216,
+        "line" : 217,
         "column" : 8,
         "source_fragment" : "MyEgress"
       },
@@ -972,7 +991,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "basic_tunnel_ipv6.p4",
-        "line" : 228,
+        "line" : 229,
         "column" : 1,
         "source_fragment" : "update_checksum( ..."
       },
