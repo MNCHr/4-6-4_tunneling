@@ -311,7 +311,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "basic_tunnel_ipv6.p4",
-        "line" : 332,
+        "line" : 333,
         "column" : 8,
         "source_fragment" : "MyDeparser"
       },
@@ -327,7 +327,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "basic_tunnel_ipv6.p4",
-        "line" : 310,
+        "line" : 311,
         "column" : 1,
         "source_fragment" : "update_checksum( ..."
       },
@@ -670,8 +670,8 @@
           "bitwidth" : 9
         },
         {
-          "name" : "srcMAC_value",
-          "bitwidth" : 48
+          "name" : "srcip_value",
+          "bitwidth" : 32
         }
       ],
       "primitives" : [
@@ -699,7 +699,7 @@
           "parameters" : [
             {
               "type" : "field",
-              "value" : ["ethernet", "srcAddr"]
+              "value" : ["ipv4", "srcAddr"]
             },
             {
               "type" : "runtime_data",
@@ -710,7 +710,7 @@
             "filename" : "basic_tunnel_ipv6.p4",
             "line" : 246,
             "column" : 8,
-            "source_fragment" : "hdr.ethernet.srcAddr = srcMAC_value"
+            "source_fragment" : "hdr.ipv4.srcAddr = srcip_value"
           }
         }
       ]
@@ -935,7 +935,7 @@
           "id" : 3,
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 250,
+            "line" : 251,
             "column" : 10,
             "source_fragment" : "udp_exact"
           },
@@ -971,9 +971,9 @@
             {
               "source_info" : {
                 "filename" : "basic_tunnel_ipv6.p4",
-                "line" : 261,
+                "line" : 262,
                 "column" : 12,
-                "source_fragment" : "16w0x2ee0 : udp_forward(1, 48w0xfa163ea0b951)"
+                "source_fragment" : "16w0x2ee0 : udp_forward(1, 32w0x0a0a016f)"
               },
               "match_key" : [
                 {
@@ -983,16 +983,16 @@
               ],
               "action_entry" : {
                 "action_id" : 8,
-                "action_data" : ["0x1", "0xfa163ea0b951"]
+                "action_data" : ["0x1", "0xa0a016f"]
               },
               "priority" : 1
             },
             {
               "source_info" : {
                 "filename" : "basic_tunnel_ipv6.p4",
-                "line" : 262,
+                "line" : 263,
                 "column" : 12,
-                "source_fragment" : "16w0x2715 : udp_forward(2, 48w0xfa163e6e3b72)"
+                "source_fragment" : "16w0x2715 : udp_forward(2, 32w0x0a0a646f)"
               },
               "match_key" : [
                 {
@@ -1002,7 +1002,7 @@
               ],
               "action_entry" : {
                 "action_id" : 8,
-                "action_data" : ["0x2", "0xfa163e6e3b72"]
+                "action_data" : ["0x2", "0xa0a646f"]
               },
               "priority" : 2
             }
@@ -1016,7 +1016,7 @@
           "id" : 0,
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 267,
+            "line" : 268,
             "column" : 12,
             "source_fragment" : "!hdr.ipv6.isValid() && hdr.udp.isValid()"
           },
@@ -1063,7 +1063,7 @@
           "id" : 1,
           "source_info" : {
             "filename" : "basic_tunnel_ipv6.p4",
-            "line" : 271,
+            "line" : 272,
             "column" : 17,
             "source_fragment" : "hdr.ipv6.isValid() && hdr.udp.isValid()"
           },
@@ -1105,7 +1105,7 @@
       "id" : 1,
       "source_info" : {
         "filename" : "basic_tunnel_ipv6.p4",
-        "line" : 298,
+        "line" : 299,
         "column" : 8,
         "source_fragment" : "MyEgress"
       },
@@ -1121,7 +1121,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "basic_tunnel_ipv6.p4",
-        "line" : 310,
+        "line" : 311,
         "column" : 1,
         "source_fragment" : "update_checksum( ..."
       },
