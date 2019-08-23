@@ -751,7 +751,7 @@
             "MyIngress.udp_forward" : null
           },
           "default_entry" : {
-            "action_id" : 2,
+            "action_id" : 1,
             "action_const" : false,
             "action_data" : [],
             "action_entry_const" : false

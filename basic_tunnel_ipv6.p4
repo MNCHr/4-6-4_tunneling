@@ -146,42 +146,42 @@ control MyIngress(inout headers hdr,
     //     hdr.ipv4.ttl = hdr.ipv4.ttl - 1;
     // }
 
-    table ipv4_lpm {
-        key = {
-            hdr.ipv4.dstAddr: ternary;
-        }
-        actions = {
-            ipv4_forward;
-            drop;
-            NoAction;
-        }
-        const entries = {
-            32w0x0a0a0000 &&& 32w0xffff0000 : ipv4_forward(2); //10.10.0.0/16 lpm
-            //32w0b00000010000000100000000000000000 &&& 32w0b11111111111111110000000000000000 : ipv4_forward(2);
-        }
+    // table ipv4_lpm {
+    //     key = {
+    //         hdr.ipv4.dstAddr: ternary;
+    //     }
+    //     actions = {
+    //         ipv4_forward;
+    //         drop;
+    //         NoAction;
+    //     }
+    //     const entries = {
+    //         32w0x0a0a0000 &&& 32w0xffff0000 : ipv4_forward(2); //10.10.0.0/16 lpm
+    //         //32w0b00000010000000100000000000000000 &&& 32w0b11111111111111110000000000000000 : ipv4_forward(2);
+    //     }
 
-        // size = 1024;
-        default_action = drop();
+    //     // size = 1024;
+    //     default_action = NoAction();
         
-    }
+    // }
     
     action ipv6_set_a(bit<128> value_ipv6_srcAddr, bit<128> value_ipv6_dstAddr) {
         hdr.ipv6.srcAddr = value_ipv6_srcAddr;
         hdr.ipv6.dstAddr = value_ipv6_dstAddr;
     }
 
-    table ipv6_set {
-        key = {
-            hdr.ipv4.dstAddr : ternary;
-        }
-        actions = {
-            ipv6_set_a;
-        }
-        const entries = {
-            32w0x0a0a0100 &&& 32w0xffffff00 : ipv6_set_a(128w0x22222222222222220000000000000003, 128w0x22222222222222220000000000000004); //2222:2222:2222:2222::4
-            32w0x0a0a6400 &&& 32w0xffffff00 : ipv6_set_a(128w0x22222222222222220000000000000004, 128w0x22222222222222220000000000000003); //2222:2222:2222:2222::3
-        }
-    }
+    // table ipv6_set {
+    //     key = {
+    //         hdr.ipv4.dstAddr : ternary;
+    //     }
+    //     actions = {
+    //         ipv6_set_a;
+    //     }
+    //     const entries = {
+    //         32w0x0a0a0100 &&& 32w0xffffff00 : ipv6_set_a(128w0x22222222222222220000000000000003, 128w0x22222222222222220000000000000004); //2222:2222:2222:2222::4
+    //         32w0x0a0a6400 &&& 32w0xffffff00 : ipv6_set_a(128w0x22222222222222220000000000000004, 128w0x22222222222222220000000000000003); //2222:2222:2222:2222::3
+    //     }
+    // }
 
     table ipv6_set_key_udp {
         key = {
@@ -201,22 +201,22 @@ control MyIngress(inout headers hdr,
         hdr.ipv6.hopLimit = 6;
     }
 
-    table ipv6_lpm {
-        key = {
-            hdr.ipv6.dstAddr : ternary; //64
-        }
-        actions = {
-            ipv6_forward;
-            drop;
-            NoAction;
-        }
-        // size = 1024;
-        default_action = drop();
-        const entries = {
-            128w0x22222222222222220000000000000000 &&& 128w0xFFFFFFFFFFFFFFFF0000000000000000 : ipv6_forward(1) ;            
-        }
-        //drop();   
-    }
+    // table ipv6_lpm {
+    //     key = {
+    //         hdr.ipv6.dstAddr : ternary; //64
+    //     }
+    //     actions = {
+    //         ipv6_forward;
+    //         drop;
+    //         NoAction;
+    //     }
+    //     // size = 1024;
+    //     default_action = NoAction();
+    //     const entries = {
+    //         128w0x22222222222222220000000000000000 &&& 128w0xFFFFFFFFFFFFFFFF0000000000000000 : ipv6_forward(1) ;            
+    //     }
+    //     //drop();   
+    // }
 
 
     action udp_forward(egressSpec_t port) {
@@ -233,7 +233,7 @@ control MyIngress(inout headers hdr,
             NoAction;
             udp_forward;
         }
-        default_action = drop();
+        default_action = NoAction();
         const entries = {
             16w0x2ee0 : udp_forward(1); //client -> server, dstport 12000
             16w0x2715 : udp_forward(2); //server -> client, dstport 10005
