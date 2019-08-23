@@ -241,9 +241,9 @@ control MyIngress(inout headers hdr,
         default_action = ipv6_decap_a;
     }
 
-    action udp_forward(egressSpec_t port, bit<32> srcAddr_value) {
+    action udp_forward(egressSpec_t port, bit<48> srcMAC_value) {
         standard_metadata.egress_spec = port;
-        hdr.ipv4.srcAddr = srcAddr_value;
+        hdr.ethernet.srcAddr = srcMAC_value;
         //hdr.udp.checksum = 17;
     }
 
@@ -258,8 +258,8 @@ control MyIngress(inout headers hdr,
         }
         default_action = drop();
         const entries = {
-            16w0x2ee0 : udp_forward(1, 32w0x0a0a016f); //client -> server, dstport 12000
-            16w0x2715 : udp_forward(2, 32w0x0a0a646f); //server -> client, dstport 10005
+            16w0x2ee0 : udp_forward(1, 48w0xfa163ea0b951); //client -> server, dstport 12000
+            16w0x2715 : udp_forward(2, 48w0xfa163e6e3b72); //server -> client, dstport 10005
         }
     }
     
