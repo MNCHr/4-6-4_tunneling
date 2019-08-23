@@ -58,6 +58,8 @@ header udp_t {
 }
 
 struct metadata {
+    bit<1> Encap;
+    bit<1> Decap;
     /* empty */
 }
 
@@ -166,8 +168,11 @@ control MyIngress(inout headers hdr,
     // }
     
     action ipv6_set_a(bit<128> value_ipv6_srcAddr, bit<128> value_ipv6_dstAddr) {
+        hdr.ipv6.setValid();
+        meta.Encap = 1;
         hdr.ipv6.srcAddr = value_ipv6_srcAddr;
         hdr.ipv6.dstAddr = value_ipv6_dstAddr;
+        hdr.ethernet.etherType = 16w0x86dd; //for v6 header
     }
 
     // table ipv6_set {
@@ -201,27 +206,44 @@ control MyIngress(inout headers hdr,
         hdr.ipv6.hopLimit = 6;
     }
 
-    // table ipv6_lpm {
-    //     key = {
-    //         hdr.ipv6.dstAddr : ternary; //64
-    //     }
-    //     actions = {
-    //         ipv6_forward;
-    //         drop;
-    //         NoAction;
-    //     }
-    //     // size = 1024;
-    //     default_action = NoAction();
-    //     const entries = {
-    //         128w0x22222222222222220000000000000000 &&& 128w0xFFFFFFFFFFFFFFFF0000000000000000 : ipv6_forward(1) ;            
-    //     }
-    //     //drop();   
-    // }
+    table ipv6_lpm {
+        key = {
+            hdr.udp.dstPort : exact;
+            hdr.ipv6.dstAddr : ternary; //64
+        }
+        actions = {
+            ipv6_forward;
+            drop;
+            NoAction;
+        }
+        // size = 1024;
+        default_action = drop();
+        const entries = {
+            (16w0x2ee0, 128w0x22222222222222220000000000000000 &&& 128w0xFFFFFFFFFFFFFFFF0000000000000000) : ipv6_forward(1) ;            
+            (16w0x2715, 128w0x22222222222222220000000000000000 &&& 128w0xFFFFFFFFFFFFFFFF0000000000000000) : ipv6_forward(2) ;
+        }
+        //drop();   
+    }
+    
+    action ipv6_decap_a() {
+        hdr.ipv6.setInvalid();
+        meta.Decap = 1;
+        hdr.ethernet.etherType = 16w0x800;
+    }
+    
+    table ipv6_decap {
+        key = {
 
+        }
+        actions = {
+            ipv6_decap_a;
+        }
+        default_action = ipv6_decap_a;
+    }
 
     action udp_forward(egressSpec_t port) {
         standard_metadata.egress_spec = port;
-        hdr.udp.checksum = 17;
+        //hdr.udp.checksum = 17;
     }
 
     table udp_exact {
@@ -233,23 +255,20 @@ control MyIngress(inout headers hdr,
             NoAction;
             udp_forward;
         }
-        default_action = NoAction();
+        default_action = drop();
         const entries = {
             16w0x2ee0 : udp_forward(1); //client -> server, dstport 12000
             16w0x2715 : udp_forward(2); //server -> client, dstport 10005
         }
     }
-
+    
     apply {
         if (!hdr.ipv6.isValid() && hdr.udp.isValid()) { //encap
-            hdr.ethernet.etherType = 16w0x86dd; //for v6 header
-            hdr.ipv6.setValid();
             ipv6_set_key_udp.apply(); //v6 header value setting
-            udp_exact.apply();
+            ipv6_lpm.apply();            
         }
         else if (hdr.ipv6.isValid() && hdr.udp.isValid()) { //decap
-            hdr.ipv6.setInvalid();
-            hdr.ethernet.etherType = 16w0x800;
+            ipv6_decap.apply();
             udp_exact.apply();
         }
     }

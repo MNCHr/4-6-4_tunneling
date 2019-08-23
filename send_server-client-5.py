@@ -25,7 +25,7 @@ def main():
 # client -> server
     pkt4 = Ether(src=get_if_hwaddr(iface), dst='00:00:00:00:00:04') / IP(src='10.10.100.5', dst='10.10.1.12') / UDP(dport=12000) / "client->server, UDP test"
 # server -> client
-    pkt5 = Ether(src=get_if_hwaddr(iface), dst='00:00:00:00:00:04') / IP(src='10.10.100.5', dst='10.10.1.12') / UDP(dport=10005) / "server->client, UDP test"
+    pkt5 = Ether(src=get_if_hwaddr(iface), dst='00:00:00:00:00:04') / IP(src='10.10.1.12', dst='10.10.100.5') / UDP(dport=10005) / "server->client, UDP test"
 
 # client -> server, encapsulated
     pkt6 = Ether(src=get_if_hwaddr(iface), dst='00:00:00:00:00:05') / IPv6(nh=0) / IP(src='10.10.100.5', dst='10.10.1.12') / UDP(dport=12000) / "client->server, decap test"
