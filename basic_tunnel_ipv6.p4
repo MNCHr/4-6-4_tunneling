@@ -263,8 +263,8 @@ control MyIngress(inout headers hdr,
         }
         default_action = drop();
         const entries = {
-            16w0x2ee0 : udp_forward(1, 48w0xfa163e0f19e4, 48w0xfa16e337f065, 32w0x0a0a6405, 32w0x0a0a010c); //client -> server, dstport 12000  32w0x0a0a6405
-            16w0x2715 : udp_forward(2, 48w0xfa163e2101ab, 48w0xfa163e8d4f06, 32w0x0a0a010c, 32w0x0a0a6405); //server -> client, dstport 10005   48w0xfa163e6e3b72
+            16w0x2ee0 : udp_forward(1, 48w0xfa163e0f19e4, 48w0xfa16e337f065, 32w0x0a0a016f, 32w0x0a0a010c); //client -> server, dstport 12000  32w0x0a0a6405
+            16w0x2715 : udp_forward(2, 48w0xfa163e2101ab, 48w0xfa163e8d4f06, 32w0x0a0a646f, 32w0x0a0a6405); //server -> client, dstport 10005   48w0xfa163e6e3b72
         }
     }
     
