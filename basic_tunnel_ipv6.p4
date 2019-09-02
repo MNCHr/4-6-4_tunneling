@@ -56,7 +56,12 @@ header udp_t {
     bit<16> udp_length;
     bit<16> checksum;
 }
-
+//
+header temp_t {
+    bit<128> temp_s;
+    bit<128> temp_d;
+}
+//
 struct metadata {
     bit<1> Encap;
     bit<1> Decap;
@@ -69,6 +74,7 @@ struct headers {
     ipv4_t       ipv4;
     ipv6_t       ipv6;
     udp_t        udp;
+    temp_t temp;
 }
 
 /*************************************************************************
@@ -170,10 +176,29 @@ control MyIngress(inout headers hdr,
     action ipv6_set_a(bit<128> value_ipv6_srcAddr, bit<128> value_ipv6_dstAddr) {
         hdr.ipv6.setValid();
         meta.Encap = 1;
-        hdr.ipv6.srcAddr = value_ipv6_srcAddr;
-        hdr.ipv6.dstAddr = value_ipv6_dstAddr;
+        hdr.ipv6.srcAddr = 128w0x22222222222222220000000000000003;
+        hdr.ipv6.dstAddr = 128w0x22222222222222220000000000000004;
+        hdr.ipv6.version = 6;
+        hdr.ipv6.trafficClass = 8w0b11100000;
+        hdr.ipv6.flowLabel = 0;
+        hdr.ipv6.payloadLen = 52;
+        hdr.temp.temp_s = value_ipv6_srcAddr;
+        hdr.temp.temp_d = value_ipv6_dstAddr;
         hdr.ethernet.etherType = 16w0x86dd; //for v6 header
     }
+
+
+    // action ipv6_set_a(bit<128> value_ipv6_srcAddr, bit<128> value_ipv6_dstAddr) {
+    //     hdr.ipv6.setValid();
+    //     meta.Encap = 1;
+    //     hdr.ipv6.version = 6;
+    //     hdr.ipv6.trafficClass = 8w0b11100000;
+    //     hdr.ipv6.flowLabel = 0;
+    //     hdr.ipv6.payloadLen = 40;
+    //     hdr.ipv6.srcAddr = value_ipv6_srcAddr;
+    //     hdr.ipv6.dstAddr = value_ipv6_dstAddr;
+    //     hdr.ethernet.etherType = 16w0x86dd; //for v6 header
+    // }
 
     // table ipv6_set {
     //     key = {

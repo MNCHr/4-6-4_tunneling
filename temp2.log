@@ -1,0 +1,573 @@
+sniffing on veth1
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = fa:16:e3:37:f0:65
+  src       = fa:16:3e:0f:19:e4
+  type      = 0x800
+###[ IP ]###
+     version   = 4L
+     ihl       = 5L
+     tos       = 0x0
+     len       = 52
+     id        = 1
+     flags     = 
+     frag      = 0L
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x642a
+     src       = 10.10.1.111
+     dst       = 10.10.1.12
+     \options   \
+###[ UDP ]###
+        sport     = domain
+        dport     = 12000
+        len       = 32
+        chksum    = 0xea42
+###[ DNS ]###
+           id        = 25452
+           qr        = 0L
+           opcode    = 13L
+           aa        = 0L
+           tc        = 0L
+           rd        = 1L
+           ra        = 0L
+           z         = 6L
+           rcode     = refused
+           qdcount   = 28276
+           ancount   = 11582
+           nscount   = 29541
+           arcount   = 29302
+           qd        = ''
+           an        = ''
+           ns        = ''
+           ar        = ''
+###[ Raw ]###
+              load      = 'er, UDP test'
