@@ -11,11 +11,11 @@ def get_if():
     ifs=get_if_list()
     iface=None
     for i in get_if_list():
-        if "ens3" in i:
+        if "veth1" in i:
             iface=i
             break;
     if not iface:
-        print "Cannot find ens3 interface"
+        print "Cannot find veth3 interface"
         exit(1)
     return iface
 
@@ -28,7 +28,7 @@ def handle_pkt(pkt):
 
 def main():
     get_if()
-    iface = 'ens3'
+    iface = 'veth1'
     print "sniffing on %s" % iface
     sys.stdout.flush()
     sniff(iface = iface,

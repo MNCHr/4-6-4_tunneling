@@ -411,3 +411,201 @@ got a packet
            load      = '@\x11\x01\x94\n\nd\x05\n\n\x01\x0c\x005.\xe0\x00 \xeaBclient->serv'
 ###[ Padding ]###
               load      = 'er, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = 00:00:00:00:00:04
+  src       = 7e:cf:f7:64:2e:28
+  type      = 0x86dd
+###[ IPv6 ]###
+     version   = 6L
+     tc        = 224L
+     fl        = 0L
+     plen      = 52
+     nh        = Hop-by-Hop Option Header
+     hlim      = 6
+     src       = 2222:2222:2222:2222::3
+     dst       = 2222:2222:2222:2222::4
+###[ IPv6 Extension Header - Hop-by-Hop Options Header ]###
+        nh        = 69
+        len       = 0
+        autopad   = On
+        \options   \
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+         |###[ Scapy6 Unknown Option ]###
+         |  otype     = 52 [00: skip, 1: May change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ PadN ]###
+         |  otype     = PadN [00: skip, 0: Don't change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+###[ Raw ]###
+           load      = '@\x11\x01\x94\n\nd\x05\n\n\x01\x0c\x005.\xe0\x00 \xeaBclient->server, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = 00:00:00:00:00:04
+  src       = 7e:cf:f7:64:2e:28
+  type      = 0x86dd
+###[ IPv6 ]###
+     version   = 6L
+     tc        = 224L
+     fl        = 0L
+     plen      = 52
+     nh        = Hop-by-Hop Option Header
+     hlim      = 6
+     src       = 2222:2222:2222:2222::3
+     dst       = 2222:2222:2222:2222::4
+###[ IPv6 Extension Header - Hop-by-Hop Options Header ]###
+        nh        = 69
+        len       = 0
+        autopad   = On
+        \options   \
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+         |###[ Scapy6 Unknown Option ]###
+         |  otype     = 52 [00: skip, 1: May change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ PadN ]###
+         |  otype     = PadN [00: skip, 0: Don't change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+###[ Raw ]###
+           load      = '@\x11\x01\x94\n\nd\x05\n\n\x01\x0c\x005.\xe0\x00 \xeaBclient->server, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = 00:00:00:00:00:04
+  src       = 7e:cf:f7:64:2e:28
+  type      = 0x86dd
+###[ IPv6 ]###
+     version   = 6L
+     tc        = 224L
+     fl        = 0L
+     plen      = 52
+     nh        = Hop-by-Hop Option Header
+     hlim      = 6
+     src       = 2222:2222:2222:2222::3
+     dst       = 2222:2222:2222:2222::4
+###[ IPv6 Extension Header - Hop-by-Hop Options Header ]###
+        nh        = 69
+        len       = 0
+        autopad   = On
+        \options   \
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+         |###[ Scapy6 Unknown Option ]###
+         |  otype     = 52 [00: skip, 1: May change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ PadN ]###
+         |  otype     = PadN [00: skip, 0: Don't change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+###[ Raw ]###
+           load      = '@\x11\x01\x94\n\nd\x05\n\n\x01\x0c\x005.\xe0\x00 \xeaBclient->server, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = 00:00:00:00:00:04
+  src       = 7e:cf:f7:64:2e:28
+  type      = 0x86dd
+###[ IPv6 ]###
+     version   = 6L
+     tc        = 224L
+     fl        = 0L
+     plen      = 52
+     nh        = Hop-by-Hop Option Header
+     hlim      = 6
+     src       = 2222:2222:2222:2222::3
+     dst       = 2222:2222:2222:2222::4
+###[ IPv6 Extension Header - Hop-by-Hop Options Header ]###
+        nh        = 69
+        len       = 0
+        autopad   = On
+        \options   \
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+         |###[ Scapy6 Unknown Option ]###
+         |  otype     = 52 [00: skip, 1: May change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ PadN ]###
+         |  otype     = PadN [00: skip, 0: Don't change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+###[ Raw ]###
+           load      = '@\x11\x01\x94\n\nd\x05\n\n\x01\x0c\x005.\xe0\x00 \xeaBclient->server, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = 00:00:00:00:00:04
+  src       = 7e:cf:f7:64:2e:28
+  type      = 0x86dd
+###[ IPv6 ]###
+     version   = 6L
+     tc        = 224L
+     fl        = 0L
+     plen      = 52
+     nh        = Hop-by-Hop Option Header
+     hlim      = 6
+     src       = 2222:2222:2222:2222::3
+     dst       = 2222:2222:2222:2222::4
+###[ IPv6 Extension Header - Hop-by-Hop Options Header ]###
+        nh        = 69
+        len       = 0
+        autopad   = On
+        \options   \
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+         |###[ Scapy6 Unknown Option ]###
+         |  otype     = 52 [00: skip, 1: May change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ PadN ]###
+         |  otype     = PadN [00: skip, 0: Don't change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+###[ Raw ]###
+           load      = '@\x11\x01\x94\n\nd\x05\n\n\x01\x0c\x005.\xe0\x00 \xeaBclient->server, UDP test'
+got a packet
+###[ Ethernet ]###
+  dst       = 00:00:00:00:00:04
+  src       = 7e:cf:f7:64:2e:28
+  type      = 0x86dd
+###[ IPv6 ]###
+     version   = 6L
+     tc        = 224L
+     fl        = 0L
+     plen      = 52
+     nh        = Hop-by-Hop Option Header
+     hlim      = 6
+     src       = 2222:2222:2222:2222::3
+     dst       = 2222:2222:2222:2222::4
+###[ IPv6 Extension Header - Hop-by-Hop Options Header ]###
+        nh        = 69
+        len       = 0
+        autopad   = On
+        \options   \
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+         |###[ Scapy6 Unknown Option ]###
+         |  otype     = 52 [00: skip, 1: May change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ PadN ]###
+         |  otype     = PadN [00: skip, 0: Don't change en-route]
+         |  optlen    = 0
+         |  optdata   = ''
+         |###[ Pad1 ]###
+         |  otype     = Pad1 [00: skip, 0: Don't change en-route]
+###[ Raw ]###
+           load      = '@\x11\x01\x94\n\nd\x05\n\n\x01\x0c\x005.\xe0\x00 \xeaBclient->server, UDP test'
